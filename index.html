@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Atharv Hadpe — Full-Stack Developer & AI/ML Enthusiast. Explore my projects, skills, and journey in tech.">
+  <meta name="theme-color" content="#0f1117">
+  <meta name="author" content="Atharv Hadpe">
+  
+  <title>Atharv Hadpe — Full-Stack Developer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/about.css">
+  <link rel="stylesheet" href="css/skills.css">
+  <link rel="stylesheet" href="css/projects.css">
+  <link rel="stylesheet" href="css/certifications.css">
+  <link rel="stylesheet" href="css/education.css">
+  <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/footer.css">
+</head>
+<body>
+
+  <!-- ============================================
+       NAVBAR
+       ============================================ -->
+  <nav class="navbar anim-load--nav" id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="navbar__inner">
+      <a href="#" class="navbar__logo">ATHARV HADPE</a>
+
+      <!-- Desktop Nav -->
+      <div class="navbar__links">
+        <a href="#about" class="navbar__link">About</a>
+        <a href="#projects" class="navbar__link">Projects</a>
+        <a href="#contact" class="navbar__link">Contact</a>
+        <a href="#" class="navbar__resume" target="_blank" rel="noopener noreferrer">RESUME</a>
+      </div>
+
+      <!-- Hamburger -->
+      <button class="navbar__hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="navbar__mobile-menu" role="dialog" aria-label="Mobile navigation">
+      <a href="#about" class="navbar__link">About</a>
+      <a href="#projects" class="navbar__link">Projects</a>
+      <a href="#contact" class="navbar__link">Contact</a>
+      <a href="#" class="navbar__resume" target="_blank" rel="noopener noreferrer">RESUME</a>
+    </div>
+  </nav>
+
+  <!-- ============================================
+       HERO
+       ============================================ -->
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero__inner">
+
+        <!-- Left: Text Content -->
+        <div class="hero__content">
+          <span class="hero__greeting anim-load anim-load--2">Hey YO</span>
+          <h1 class="hero__name anim-load anim-load--3">Myself ATHARV HADPE</h1>
+          <p class="hero__role anim-load anim-load--4">Full-Stack Developer</p>
+          <p class="hero__description anim-load anim-load--5">AI/ML Enthusiast, building things and learning how they work.</p>
+          <div class="hero__cta anim-load anim-load--6">
+            <a href="#projects" class="btn btn--primary">VIEW PROJECTS</a>
+            <a href="#contact" class="btn btn--outline">CONTACT ME</a>
+          </div>
+        </div>
+
+        <!-- Right: Photo & Social Links -->
+        <div class="hero__visual">
+          <div class="hero__photo-frame anim-load--photo">
+            <div class="hero__photo-glow"></div>
+            <div class="hero__photo-wrapper">
+              <img 
+                src="assets/images/atharv-photo.jpg" 
+                alt="Atharv Hadpe — Full-Stack Developer" 
+                class="hero__photo"
+                loading="eager"
+                width="320"
+                height="400"
+              >
+            </div>
+          </div>
+
+          <div class="hero__socials anim-load anim-load--8">
+            <!-- GitHub -->
+            <a href="https://github.com/atharv518" target="_blank" rel="noopener noreferrer" class="hero__social-item">
+              <span class="social-icon" aria-label="GitHub">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+              </span>
+              <span class="hero__social-text">atharv518</span>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com/in/atharv-hadpe-9b899932/" target="_blank" rel="noopener noreferrer" class="hero__social-item">
+              <span class="social-icon" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              </span>
+              <span class="hero__social-text">atharv-hadpe</span>
+            </a>
+
+            <!-- Gmail -->
+            <a href="mailto:atharvhadpe18@gmail.com" class="hero__social-item">
+              <span class="social-icon" aria-label="Email">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+              </span>
+              <span class="hero__social-text">atharvhadpe18@gmail.com</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Scroll to Explore -->
+      <a href="#about" class="hero__scroll-cue anim-load anim-load--9">
+        <span class="hero__scroll-arrow">↓</span>
+        SCROLL TO EXPLORE
+      </a>
+    </div>
+  </section>
+
+  <!-- ============================================
+       ABOUT
+       ============================================ -->
+  <section class="section section--alt" id="about">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-header__title">About Me</h2>
+      </div>
+      <div class="about__content reveal">
+        <div class="about__text">
+          <p>Hey! I'm Atharv Hadpe, a final-year B.E. Information Technology student at Mumbai University and a full-stack developer.</p>
+          <p>I've always been curious about computers and what happens behind the things we see on a screen. My interest in engineering actually started back in 6th standard, when I first saw code and was fascinated by the different colours and symbols on the screen.</p>
+          <p>As I grew up playing and exploring different mobile and video games, that curiosity only grew. I would often wonder how a game could run so smoothly, how people from different places could connect and play together, and what was actually happening behind the scenes.</p>
+          <p>Eventually, I realized that coding and engineering weren't limited to games. Almost everything we use on the internet is built using the same ideas, and that realization turned my curiosity into something I genuinely wanted to pursue.</p>
+          <p>Today, I enjoy building things, experimenting with new technologies, understanding how systems work, and learning something new every day. Outside of tech, I love playing and watching all kinds of sports and esports.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       SKILLS
+       ============================================ -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-header__title">Skills</h2>
+      </div>
+      <div class="skills__categories" id="skills-container">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       PROJECTS
+       ============================================ -->
+  <section class="section section--alt" id="projects">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-header__title">Projects</h2>
+      </div>
+      <div class="projects__grid" id="projects-grid">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CERTIFICATIONS
+       ============================================ -->
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-header__title">Certifications</h2>
+      </div>
+      <div class="certifications__grid" id="certifications-grid">
+        <!-- Rendered by main.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       EDUCATION
+       ============================================ -->
+  <section class="section section--alt" id="education">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-header__title">Education</h2>
+      </div>
+      <div class="education__card reveal">
+        <div class="education__icon">🎓</div>
+        <h3 class="education__college">Konkan Gyanpeeth College of Engineering</h3>
+        <p class="education__degree">B.E. — Information Technology</p>
+        <p class="education__university">Mumbai University</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       CONTACT
+       ============================================ -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="section-header reveal">
+        <h2 class="section-header__title">Get In Touch</h2>
+      </div>
+      <div class="contact__content">
+        <p class="contact__intro reveal">Feel free to reach out if you'd like to collaborate, have a question, or just want to say hi.</p>
+        <div class="contact__items reveal-stagger">
+          <!-- Email -->
+          <a href="mailto:atharvhadpe18@gmail.com" class="contact__item">
+            <span class="social-icon" aria-label="Email">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            </span>
+            <span class="contact__item-label">Email</span>
+            <span class="contact__item-value">atharvhadpe18@gmail.com</span>
+          </a>
+          <!-- GitHub -->
+          <a href="https://github.com/atharv518" target="_blank" rel="noopener noreferrer" class="contact__item">
+            <span class="social-icon" aria-label="GitHub">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+            </span>
+            <span class="contact__item-label">GitHub</span>
+            <span class="contact__item-value">github.com/atharv518</span>
+          </a>
+          <!-- LinkedIn -->
+          <a href="https://www.linkedin.com/in/atharv-hadpe-9b899932/" target="_blank" rel="noopener noreferrer" class="contact__item">
+            <span class="social-icon" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </span>
+            <span class="contact__item-label">LinkedIn</span>
+            <span class="contact__item-value">atharv-hadpe</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================
+       FOOTER
+       ============================================ -->
+  <footer class="footer">
+    <div class="container">
+      <p class="footer__name">ATHARV HADPE</p>
+      <p class="footer__tagline">Full-Stack Developer • AI/ML Enthusiast</p>
+      <div class="footer__socials">
+        <a href="https://github.com/atharv518" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://www.linkedin.com/in/atharv-hadpe-9b899932/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:atharvhadpe18@gmail.com" class="social-icon" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+      <p class="footer__copy">© 2026 Atharv Hadpe. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js" defer></script>
+  <script src="js/main.js" defer></script>
+  <script src="js/navbar.js" defer></script>
+  <script src="js/animations.js" defer></script>
+
+</body>
+</html>

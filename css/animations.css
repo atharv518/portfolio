@@ -1,0 +1,112 @@
+/* ============================================
+   ANIMATIONS — Page Load + Scroll Reveal
+   ============================================ */
+
+/* ---- Page Load Entrance ---- */
+.anim-load {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: load-enter var(--duration-slow) var(--ease-out) forwards;
+}
+
+@keyframes load-enter {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Staggered delays for hero elements */
+.anim-load--1 { animation-delay: 0ms; }      /* Navbar */
+.anim-load--2 { animation-delay: 200ms; }     /* Hey YO */
+.anim-load--3 { animation-delay: 400ms; }     /* Name */
+.anim-load--4 { animation-delay: 550ms; }     /* Role */
+.anim-load--5 { animation-delay: 700ms; }     /* Description */
+.anim-load--6 { animation-delay: 850ms; }     /* CTA */
+.anim-load--7 { animation-delay: 500ms; }     /* Photo */
+.anim-load--8 { animation-delay: 900ms; }     /* Socials */
+.anim-load--9 { animation-delay: 1200ms; }    /* Scroll cue */
+
+/* Photo uses scale entrance */
+.anim-load--photo {
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+  animation: load-enter-photo 800ms var(--ease-out) forwards;
+  animation-delay: 500ms;
+}
+
+@keyframes load-enter-photo {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Navbar special - slides down */
+.anim-load--nav {
+  opacity: 0;
+  transform: translateY(-20px);
+  animation: load-enter-nav var(--duration-slow) var(--ease-out) forwards;
+}
+
+@keyframes load-enter-nav {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ---- Scroll Reveal ---- */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Staggered children */
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--duration-slow) var(--ease-out),
+              transform var(--duration-slow) var(--ease-out);
+}
+
+.reveal-stagger.revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger.revealed > *:nth-child(1) { transition-delay: 0ms; }
+.reveal-stagger.revealed > *:nth-child(2) { transition-delay: 100ms; }
+.reveal-stagger.revealed > *:nth-child(3) { transition-delay: 200ms; }
+.reveal-stagger.revealed > *:nth-child(4) { transition-delay: 300ms; }
+.reveal-stagger.revealed > *:nth-child(5) { transition-delay: 400ms; }
+.reveal-stagger.revealed > *:nth-child(6) { transition-delay: 500ms; }
+.reveal-stagger.revealed > *:nth-child(7) { transition-delay: 600ms; }
+.reveal-stagger.revealed > *:nth-child(8) { transition-delay: 700ms; }
+.reveal-stagger.revealed > *:nth-child(9) { transition-delay: 800ms; }
+.reveal-stagger.revealed > *:nth-child(10) { transition-delay: 900ms; }
+
+/* ---- Reduced Motion ---- */
+@media (prefers-reduced-motion: reduce) {
+  .anim-load,
+  .anim-load--photo,
+  .anim-load--nav,
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .reveal-stagger > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

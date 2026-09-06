@@ -1,0 +1,22 @@
+/* ============================================
+   ABOUT SECTION
+   ============================================ */
+
+.about__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about__text {
+  color: var(--text-secondary);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+}
+
+.about__text p {
+  margin-bottom: var(--space-lg);
+}
+
+.about__text p:last-child {
+  margin-bottom: 0;
+}

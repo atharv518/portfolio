@@ -1,0 +1,44 @@
+/* ============================================
+   EDUCATION SECTION
+   ============================================ */
+
+.education__card {
+  max-width: 600px;
+  margin: 0 auto;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  text-align: center;
+  transition: all var(--duration-normal) var(--ease-out);
+}
+
+.education__card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+.education__icon {
+  font-size: 2rem;
+  margin-bottom: var(--space-md);
+}
+
+.education__college {
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-bold);
+  color: var(--text-heading);
+  margin-bottom: var(--space-sm);
+}
+
+.education__degree {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-medium);
+  color: var(--text-primary);
+  margin-bottom: var(--space-xs);
+}
+
+.education__university {
+  font-size: var(--fs-small);
+  color: var(--text-secondary);
+}

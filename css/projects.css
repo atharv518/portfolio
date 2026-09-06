@@ -1,0 +1,77 @@
+/* ============================================
+   PROJECTS SECTION
+   ============================================ */
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: var(--space-xl);
+}
+
+/* Project Card */
+.project-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
+  transition: all var(--duration-normal) var(--ease-out);
+  position: relative;
+}
+
+.project-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Status badge - top right */
+.project-card__status {
+  position: absolute;
+  top: var(--space-lg);
+  right: var(--space-lg);
+}
+
+/* Title */
+.project-card__title {
+  font-size: var(--fs-card-title);
+  font-weight: var(--fw-bold);
+  color: var(--text-heading);
+  padding-right: 120px; /* space for badge */
+}
+
+/* Description */
+.project-card__description {
+  font-size: var(--fs-small);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+  flex-grow: 1;
+}
+
+/* Technologies */
+.project-card__tech {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+/* Actions */
+.project-card__actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-sm);
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card__title {
+    padding-right: 0;
+    margin-top: var(--space-xl);
+  }
+}

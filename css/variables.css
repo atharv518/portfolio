@@ -1,0 +1,96 @@
+/* ============================================
+   DESIGN TOKENS — Atharv Hadpe Portfolio
+   ============================================ */
+
+:root {
+  /* ---- Backgrounds ---- */
+  --bg-primary: hsl(220, 15%, 6%);
+  --bg-secondary: hsl(220, 15%, 9%);
+  --bg-card: hsl(220, 15%, 11%);
+  --bg-card-hover: hsl(220, 15%, 14%);
+  --bg-navbar: hsla(220, 15%, 6%, 0.85);
+
+  /* ---- Text ---- */
+  --text-primary: hsl(220, 15%, 93%);
+  --text-secondary: hsl(220, 10%, 60%);
+  --text-heading: hsl(0, 0%, 98%);
+  --text-muted: hsl(220, 10%, 45%);
+
+  /* ---- Accent ---- */
+  --accent: hsl(230, 65%, 62%);
+  --accent-hover: hsl(230, 65%, 72%);
+  --accent-glow: hsla(230, 65%, 62%, 0.15);
+  --accent-glow-strong: hsla(230, 65%, 62%, 0.25);
+
+  /* ---- Borders ---- */
+  --border: hsla(220, 15%, 30%, 0.4);
+  --border-hover: hsla(220, 15%, 45%, 0.5);
+
+  /* ---- Status ---- */
+  --status-completed: hsl(145, 60%, 45%);
+  --status-completed-bg: hsla(145, 60%, 45%, 0.1);
+  --status-working: hsl(40, 90%, 55%);
+  --status-working-bg: hsla(40, 90%, 55%, 0.1);
+
+  /* ---- Typography ---- */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+
+  --fs-hero-greeting: 1.25rem;
+  --fs-hero-name: clamp(2.5rem, 5vw, 4rem);
+  --fs-hero-role: clamp(1.25rem, 2.5vw, 1.75rem);
+  --fs-hero-desc: clamp(1rem, 1.5vw, 1.125rem);
+  --fs-section-heading: clamp(1.75rem, 3vw, 2.5rem);
+  --fs-card-title: 1.25rem;
+  --fs-body: 1rem;
+  --fs-small: 0.875rem;
+  --fs-xs: 0.75rem;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-semibold: 600;
+  --fw-bold: 700;
+
+  --lh-body: 1.6;
+  --lh-heading: 1.2;
+  --lh-relaxed: 1.7;
+
+  --ls-wide: 0.05em;
+  --ls-wider: 0.1em;
+  --ls-widest: 0.15em;
+
+  /* ---- Spacing ---- */
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4rem;
+  --space-4xl: 6rem;
+  --space-5xl: 8rem;
+
+  /* ---- Layout ---- */
+  --container-max: 1200px;
+  --container-padding: 1.5rem;
+  --navbar-height: 70px;
+
+  /* ---- Borders ---- */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+
+  /* ---- Transitions ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 600ms;
+
+  /* ---- Shadows ---- */
+  --shadow-sm: 0 2px 8px hsla(0, 0%, 0%, 0.3);
+  --shadow-md: 0 4px 16px hsla(0, 0%, 0%, 0.4);
+  --shadow-lg: 0 8px 32px hsla(0, 0%, 0%, 0.5);
+  --shadow-accent: 0 0 20px var(--accent-glow);
+}
