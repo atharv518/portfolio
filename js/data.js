@@ -5,7 +5,7 @@
 const PROJECTS = [
   {
     title: "NovaATS",
-    status: "COMPLETED",
+    status: "COMPLETED", // "COMPLETED" or "CURRENTLY WORKING"
     description: "AI-powered resume analysis platform that evaluates resumes against job descriptions, provides ATS compatibility scoring, identifies skill gaps, and generates actionable feedback.",
     technologies: ["React", "Vite", "Tailwind CSS", "FastAPI", "Python", "AI"],
     github: "https://github.com/atharv518/ai-resume-analyzer",
@@ -17,8 +17,9 @@ const PROJECTS = [
     description: "A Flask-based CDN simulation that models an origin server and regional edge nodes with intelligent routing, caching, TTL management, health monitoring, and failover.",
     technologies: ["Python", "Flask", "JavaScript", "Networking", "Caching"],
     github: "https://github.com/atharv518/cdn-simulation-intelligent-content-routing",
-    live: null
+    live: null // Set to live URL when deployed, or null if no live demo yet
   }
+  // To add a new project in the future, simply copy the template above and add it here!
 ];
 
 const CERTIFICATIONS = [

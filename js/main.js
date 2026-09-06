@@ -30,6 +30,15 @@
           </a>`
         : '';
 
+      const githubBtn = project.github 
+        ? `<a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--small btn--icon">
+            ${ICONS.github}
+            GitHub
+          </a>`
+        : '';
+
+      const techTags = (project.technologies || []).map(tech => `<span class="tag">${tech}</span>`).join('');
+
       return `
         <article class="project-card reveal">
           <div class="project-card__status">
@@ -39,15 +48,10 @@
             </span>
           </div>
           <h3 class="project-card__title">${project.title}</h3>
-          <p class="project-card__description">${project.description}</p>
-          <div class="project-card__tech">
-            ${project.technologies.map(tech => `<span class="tag">${tech}</span>`).join('')}
-          </div>
+          <p class="project-card__description">${project.description || ''}</p>
+          ${techTags ? `<div class="project-card__tech">${techTags}</div>` : ''}
           <div class="project-card__actions">
-            <a href="${project.github}" target="_blank" rel="noopener noreferrer" class="btn btn--outline btn--small btn--icon">
-              ${ICONS.github}
-              GitHub
-            </a>
+            ${githubBtn}
             ${liveBtn}
           </div>
         </article>
