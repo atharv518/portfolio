@@ -118,12 +118,98 @@
     });
   }
 
+  // ---- Contact Form Validation & Submission Handler ----
+  function initContactForm() {
+    const form = document.getElementById('contact-form');
+    if (!form) return;
+
+    const nameInput = document.getElementById('contact-name');
+    const emailInput = document.getElementById('contact-email');
+    const messageInput = document.getElementById('contact-message');
+    const nameError = document.getElementById('name-error');
+    const emailError = document.getElementById('email-error');
+    const messageError = document.getElementById('message-error');
+    const formStatus = document.getElementById('form-status');
+
+    function validateEmail(email) {
+      return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function clearErrors() {
+      nameError.textContent = '';
+      emailError.textContent = '';
+      messageError.textContent = '';
+      nameInput.classList.remove('is-invalid');
+      emailInput.classList.remove('is-invalid');
+      messageInput.classList.remove('is-invalid');
+      formStatus.className = 'form-status';
+      formStatus.textContent = '';
+      formStatus.style.display = 'none';
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      clearErrors();
+
+      let isValid = true;
+      const name = nameInput.value.trim();
+      const email = emailInput.value.trim();
+      const message = messageInput.value.trim();
+
+      if (!name) {
+        nameError.textContent = 'Please enter your name.';
+        nameInput.classList.add('is-invalid');
+        isValid = false;
+      }
+
+      if (!email) {
+        emailError.textContent = 'Please enter your email address.';
+        emailInput.classList.add('is-invalid');
+        isValid = false;
+      } else if (!validateEmail(email)) {
+        emailError.textContent = 'Please enter a valid email address.';
+        emailInput.classList.add('is-invalid');
+        isValid = false;
+      }
+
+      if (!message) {
+        messageError.textContent = 'Please enter a message.';
+        messageInput.classList.add('is-invalid');
+        isValid = false;
+      } else if (message.length < 10) {
+        messageError.textContent = 'Message should be at least 10 characters.';
+        messageInput.classList.add('is-invalid');
+        isValid = false;
+      }
+
+      if (!isValid) return;
+
+      // Status notification (temporary until backend email service is connected)
+      formStatus.className = 'form-status form-status--info';
+      formStatus.innerHTML = `Thanks for reaching out, <strong>${name}</strong>! Direct form submission will be connected to an email service soon. In the meantime, please feel free to reach me directly at <a href="mailto:atharvhadpe18@gmail.com" style="color: var(--accent); text-decoration: underline;">atharvhadpe18@gmail.com</a>.`;
+      formStatus.style.display = 'block';
+      form.reset();
+    });
+
+    // Realtime error clearing on input
+    [nameInput, emailInput, messageInput].forEach(input => {
+      input.addEventListener('input', function() {
+        if (this.classList.contains('is-invalid')) {
+          this.classList.remove('is-invalid');
+          const errorSpan = document.getElementById(this.name + '-error');
+          if (errorSpan) errorSpan.textContent = '';
+        }
+      });
+    });
+  }
+
   // ---- Initialize ----
   function init() {
     renderProjects();
     renderSkills();
     renderCertifications();
     initSmoothScroll();
+    initContactForm();
   }
 
   // Run when DOM is ready

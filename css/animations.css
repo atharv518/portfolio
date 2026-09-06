@@ -98,6 +98,8 @@
   .anim-load,
   .anim-load--photo,
   .anim-load--nav,
+  .hero__scroll-wrapper,
+  .hero__scroll-arrow,
   .reveal {
     opacity: 1 !important;
     transform: none !important;

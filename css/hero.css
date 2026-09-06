@@ -7,13 +7,14 @@
   display: flex;
   align-items: center;
   padding-top: var(--navbar-height);
+  padding-bottom: var(--space-3xl);
   position: relative;
   overflow: hidden;
 }
 
 .hero__inner {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.1fr 0.9fr;
   gap: var(--space-3xl);
   align-items: center;
   width: 100%;
@@ -51,7 +52,7 @@
   font-size: var(--fs-hero-desc);
   color: var(--text-secondary);
   line-height: var(--lh-relaxed);
-  max-width: 480px;
+  max-width: 500px;
   margin-top: var(--space-xs);
 }
 
@@ -72,7 +73,7 @@
 /* Photo Frame */
 .hero__photo-frame {
   position: relative;
-  width: 320px;
+  width: 370px;
   max-width: 100%;
 }
 
@@ -86,7 +87,8 @@
   );
   border-radius: var(--radius-xl);
   z-index: 0;
-  filter: blur(20px);
+  filter: blur(24px);
+  pointer-events: none;
 }
 
 .hero__photo-wrapper {
@@ -96,91 +98,77 @@
   border: 1px solid var(--border);
   overflow: hidden;
   background: var(--bg-card);
+  box-shadow: var(--shadow-md);
 }
 
 .hero__photo {
   width: 100%;
+  height: auto;
   display: block;
-  filter: brightness(0.95) contrast(1.02);
-  /* Blend white background into dark theme */
-  mask-image: linear-gradient(
-    to bottom,
-    black 85%,
-    transparent 100%
-  );
-  -webkit-mask-image: linear-gradient(
-    to bottom,
-    black 85%,
-    transparent 100%
-  );
+  object-fit: cover;
+  border-radius: inherit;
+  filter: brightness(0.98) contrast(1.02);
 }
 
-/* Dark overlay gradient on photo edges to blend white bg */
+/* Very subtle bottom edge blending to keep torso fully visible */
 .hero__photo-wrapper::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: 
-    linear-gradient(to top, var(--bg-primary) 0%, transparent 20%),
-    linear-gradient(to bottom, transparent 80%, var(--bg-primary) 100%),
-    linear-gradient(to left, transparent 85%, hsla(220, 15%, 6%, 0.3) 100%),
-    linear-gradient(to right, transparent 85%, hsla(220, 15%, 6%, 0.3) 100%);
+  background: linear-gradient(to bottom, transparent 90%, hsla(220, 15%, 6%, 0.25) 100%);
   pointer-events: none;
   z-index: 2;
-  border-radius: var(--radius-lg);
+  border-radius: inherit;
 }
 
 /* ---- Social Links Below Photo ---- */
 .hero__socials {
   display: flex;
-  align-items: flex-start;
-  gap: var(--space-2xl);
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-lg);
+  margin-top: calc(var(--space-xs) * -1);
 }
 
 .hero__social-item {
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-sm);
+  justify-content: center;
   text-decoration: none;
-  color: var(--text-secondary);
-  transition: all var(--duration-normal) var(--ease-out);
+  transition: transform var(--duration-normal) var(--ease-out);
 }
 
 .hero__social-item:hover {
-  color: var(--text-heading);
-}
-
-.hero__social-item:hover .social-icon {
-  color: var(--text-heading);
-  border-color: var(--border-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.3);
-}
-
-.hero__social-text {
-  font-size: var(--fs-xs);
-  color: var(--text-muted);
-  transition: color var(--duration-fast) var(--ease-in-out);
-  text-align: center;
-  word-break: break-all;
-  max-width: 120px;
-}
-
-.hero__social-item:hover .hero__social-text {
-  color: var(--text-secondary);
+  transform: translateY(-3px);
 }
 
 /* ---- Scroll to Explore ---- */
-.hero__scroll-cue {
+.hero__scroll-wrapper {
   position: absolute;
-  bottom: var(--space-2xl);
+  bottom: var(--space-xl);
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
+  z-index: 5;
+  opacity: 0;
+  animation: hero-scroll-enter var(--duration-slow) var(--ease-out) 1.2s forwards;
+}
+
+@keyframes hero-scroll-enter {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+.hero__scroll-cue {
+  display: inline-flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-sm);
+  gap: 4px;
   color: var(--text-muted);
   font-size: var(--fs-xs);
   letter-spacing: var(--ls-widest);
@@ -188,24 +176,46 @@
   cursor: pointer;
   text-decoration: none;
   transition: color var(--duration-fast) var(--ease-in-out);
-  animation: scroll-bounce 2.5s ease-in-out infinite;
 }
 
 .hero__scroll-cue:hover {
-  color: var(--text-secondary);
+  color: var(--accent);
 }
 
 .hero__scroll-arrow {
   font-size: 1.25rem;
-  animation: scroll-bounce 2.5s ease-in-out infinite;
+  line-height: 1;
+  display: inline-block;
+  animation: arrow-bounce 2s ease-in-out infinite 1.8s;
 }
 
-@keyframes scroll-bounce {
-  0%, 100% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(8px); }
+.hero__scroll-text {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  font-weight: var(--fw-medium);
+}
+
+@keyframes arrow-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(6px);
+  }
 }
 
 /* ---- Responsive ---- */
+@media (max-width: 1024px) {
+  .hero__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2xl);
+  }
+
+  .hero__photo-frame {
+    width: 340px;
+  }
+}
+
 @media (max-width: 768px) {
   .hero {
     min-height: auto;
@@ -238,26 +248,33 @@
   }
 
   .hero__photo-frame {
-    width: 280px;
+    width: 300px;
+    max-width: 90vw;
   }
 
   .hero__socials {
     gap: var(--space-xl);
   }
 
-  .hero__scroll-cue {
+  .hero__scroll-wrapper {
     position: relative;
     bottom: auto;
     left: auto;
     transform: none;
     margin-top: var(--space-2xl);
     order: 3;
-    animation-name: scroll-bounce-mobile;
+    animation-name: hero-scroll-enter-mobile;
   }
 
-  @keyframes scroll-bounce-mobile {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(8px); }
+  @keyframes hero-scroll-enter-mobile {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
 
@@ -272,7 +289,8 @@
   }
 
   .hero__photo-frame {
-    width: 240px;
+    width: 260px;
+    max-width: 85vw;
   }
 
   .hero__socials {

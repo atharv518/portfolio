@@ -52,6 +52,10 @@
   font-size: var(--fs-xs);
 }
 
+.btn--full {
+  width: 100%;
+}
+
 .btn--icon {
   gap: var(--space-sm);
 }
@@ -142,27 +146,39 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   border-radius: 50%;
   background: var(--bg-card);
   border: 1px solid var(--border);
-  color: var(--text-secondary);
   transition: all var(--duration-normal) var(--ease-out);
   text-decoration: none;
+  cursor: pointer;
 }
 
 .social-icon svg {
-  width: 20px;
-  height: 20px;
-  fill: currentColor;
+  display: block;
 }
 
 .social-icon:hover {
-  color: var(--text-heading);
   border-color: var(--border-hover);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px hsla(0, 0%, 0%, 0.3);
+  transform: translateY(-3px);
+  box-shadow: 0 4px 14px hsla(0, 0%, 0%, 0.4);
+}
+
+.social-icon--github:hover {
+  border-color: hsla(0, 0%, 100%, 0.4);
+  box-shadow: 0 0 12px hsla(0, 0%, 100%, 0.15);
+}
+
+.social-icon--linkedin:hover {
+  border-color: hsla(210, 90%, 55%, 0.5);
+  box-shadow: 0 0 12px hsla(210, 90%, 55%, 0.25);
+}
+
+.social-icon--google:hover {
+  border-color: hsla(217, 89%, 61%, 0.5);
+  box-shadow: 0 0 12px hsla(217, 89%, 61%, 0.25);
 }
 
 /* ---- Certificate Link ---- */
