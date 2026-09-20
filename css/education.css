@@ -1,44 +1,87 @@
 /* ============================================
-   EDUCATION SECTION
+   EDUCATION CARD
    ============================================ */
 
-.education__card {
-  max-width: 600px;
-  margin: 0 auto;
+.education-card {
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: var(--radius-lg);
-  padding: var(--space-2xl);
-  text-align: center;
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-md);
   transition: all var(--duration-normal) var(--ease-out);
 }
 
-.education__card:hover {
+.education-card:hover {
   border-color: var(--border-hover);
-  transform: translateY(-4px);
+  transform: translateY(-2px);
   box-shadow: var(--shadow-md);
 }
 
-.education__icon {
-  font-size: 2rem;
-  margin-bottom: var(--space-md);
+.education-card__badge-row {
+  display: flex;
+  align-items: center;
 }
 
-.education__college {
-  font-size: var(--fs-card-title);
+.education-card__content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.education-card__icon-box {
+  width: 52px;
+  height: 52px;
+  background: hsla(220, 15%, 15%, 0.8);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.education-card__details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.education-card__college {
+  font-size: 1.05rem;
   font-weight: var(--fw-bold);
   color: var(--text-heading);
-  margin-bottom: var(--space-sm);
+  line-height: 1.35;
+  margin: 0;
 }
 
-.education__degree {
-  font-size: var(--fs-body);
-  font-weight: var(--fw-medium);
-  color: var(--text-primary);
-  margin-bottom: var(--space-xs);
-}
-
-.education__university {
+.education-card__degree {
   font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  color: var(--accent);
+  margin: 0;
+}
+
+.education-card__university {
+  font-size: var(--fs-xs);
   color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 480px) {
+  .education-card {
+    padding: var(--space-lg);
+  }
+
+  .education-card__content {
+    gap: var(--space-md);
+  }
+
+  .education-card__icon-box {
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+  }
 }

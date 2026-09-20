@@ -42,22 +42,44 @@ const CERTIFICATIONS = [
 const SKILLS = [
   {
     category: "Languages",
-    items: ["Python", "JavaScript", "C", "HTML", "CSS"]
+    items: [
+      { name: "Python", url: "https://www.python.org/", icon: "python" },
+      { name: "JavaScript", url: "https://developer.mozilla.org/en-US/docs/Web/JavaScript", icon: "javascript" },
+      { name: "C", url: "https://en.cppreference.com/w/c", icon: "c" },
+      { name: "HTML", url: "https://developer.mozilla.org/en-US/docs/Web/HTML", icon: "html" },
+      { name: "CSS", url: "https://developer.mozilla.org/en-US/docs/Web/CSS", icon: "css" }
+    ]
   },
   {
     category: "Frameworks",
-    items: ["React", "Flask"]
+    items: [
+      { name: "React", url: "https://react.dev/", icon: "react" },
+      { name: "Flask", url: "https://flask.palletsprojects.com/", icon: "flask" }
+    ]
   },
   {
     category: "Databases",
-    items: ["PostgreSQL", "MongoDB"]
+    items: [
+      { name: "PostgreSQL", url: "https://www.postgresql.org/", icon: "postgresql" },
+      { name: "MongoDB", url: "https://www.mongodb.com/", icon: "mongodb" }
+    ]
   },
   {
     category: "Tools",
-    items: ["Git", "GitHub", "VS Code", "Postman"]
+    items: [
+      { name: "Git", url: "https://git-scm.com/", icon: "git" },
+      { name: "GitHub", url: "https://github.com/", icon: "github" },
+      { name: "VS Code", url: "https://code.visualstudio.com/", icon: "vscode" },
+      { name: "Postman", url: "https://www.postman.com/", icon: "postman" }
+    ]
   },
   {
     category: "Core",
-    items: ["OOP", "DBMS", "Operating Systems", "Computer Networks"]
+    items: [
+      { name: "OOP", url: "https://en.wikipedia.org/wiki/Object-oriented_programming", icon: "oop" },
+      { name: "DBMS", url: "https://en.wikipedia.org/wiki/Database#Database_management_system", icon: "dbms" },
+      { name: "Operating Systems", url: "https://en.wikipedia.org/wiki/Operating_system", icon: "os" },
+      { name: "Computer Networks", url: "https://en.wikipedia.org/wiki/Computer_network", icon: "networks" }
+    ]
   }
 ];
