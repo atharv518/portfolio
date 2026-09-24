@@ -94,7 +94,6 @@ python -m http.server 8000
 Once started, open `http://localhost:3000` (or `http://localhost:8000`) in your web browser.
 
 ## Deployment
-
 The portfolio can be deployed as a static website to platforms such as:
 - [Vercel](https://vercel.com/)
 - [Netlify](https://www.netlify.com/)
