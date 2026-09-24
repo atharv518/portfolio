@@ -32,6 +32,9 @@
 </head>
 <body>
 
+  <!-- WebGL Fluid Simulation Background -->
+  <canvas id="fluid-canvas" aria-hidden="true"></canvas>
+
   <!-- ============================================
        NAVBAR
        ============================================ -->
@@ -360,6 +363,8 @@
   <script src="js/main.js" defer></script>
   <script src="js/navbar.js" defer></script>
   <script src="js/animations.js" defer></script>
+  <!-- WebGL Fluid Simulation (non-deferred: needs canvas immediately) -->
+  <script src="js/fluid.js"></script>
 
 </body>
 </html>

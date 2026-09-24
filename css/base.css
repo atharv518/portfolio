@@ -118,3 +118,16 @@ input, textarea {
     scroll-behavior: auto !important;
   }
 }
+/* ============================================
+   FLUID SIMULATION LAYERING
+   ============================================ */
+
+/* The WebGL canvas is fixed at z-index:0 via JS.
+   Ensure all other direct body children (nav, sections, footer)
+   form a stacking context above it. */
+body > nav,
+body > section,
+body > footer {
+  position: relative;
+  z-index: 1;
+}
