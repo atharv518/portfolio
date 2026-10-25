@@ -1,0 +1,10 @@
+{
+  "name": "atharv-portfolio",
+  "version": "1.0.0",
+  "description": "Atharv Hadpe - Developer Portfolio Website",
+  "type": "module",
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "resend": "^4.1.2"
+  }
+}

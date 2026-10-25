@@ -163,8 +163,20 @@
     const messageError = document.getElementById('message-error');
     const formStatus = document.getElementById('form-status');
 
+    const submitBtn = document.getElementById('contact-submit-btn');
+    const gotchaInput = document.getElementById('contact-gotcha');
+
     function validateEmail(email) {
       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function escapeHtml(str) {
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
     }
 
     function clearErrors() {
@@ -179,7 +191,7 @@
       formStatus.style.display = 'none';
     }
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', async function(e) {
       e.preventDefault();
       clearErrors();
 
@@ -187,6 +199,7 @@
       const name = nameInput.value.trim();
       const email = emailInput.value.trim();
       const message = messageInput.value.trim();
+      const gotcha = gotchaInput ? gotchaInput.value : '';
 
       if (!name) {
         nameError.textContent = 'Please enter your name.';
@@ -216,11 +229,49 @@
 
       if (!isValid) return;
 
-      // Status notification (temporary until backend email service is connected)
-      formStatus.className = 'form-status form-status--info';
-      formStatus.innerHTML = `Thanks for reaching out, <strong>${name}</strong>! Direct form submission will be connected to an email service soon. In the meantime, please feel free to reach me directly at <a href="mailto:atharvhadpe18@gmail.com" style="color: var(--accent); text-decoration: underline;">atharvhadpe18@gmail.com</a>.`;
-      formStatus.style.display = 'block';
-      form.reset();
+      // Enter loading state
+      const originalBtnText = submitBtn.textContent;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'SENDING...';
+      submitBtn.setAttribute('aria-busy', 'true');
+
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            message: message,
+            _gotcha: gotcha
+          })
+        });
+
+        const data = await response.json().catch(() => ({}));
+
+        if (response.ok && data.success) {
+          formStatus.className = 'form-status form-status--success';
+          formStatus.innerHTML = `Thank you, <strong>${escapeHtml(name)}</strong>! Your message has been sent successfully. I'll get back to you soon.`;
+          formStatus.style.display = 'block';
+          form.reset();
+        } else {
+          const errorMsg = data.error || 'Failed to deliver message. Please try again or email me directly at <a href="mailto:atharvhadpe18@gmail.com" style="color: var(--accent); text-decoration: underline;">atharvhadpe18@gmail.com</a>.';
+          formStatus.className = 'form-status form-status--error';
+          formStatus.innerHTML = errorMsg;
+          formStatus.style.display = 'block';
+        }
+      } catch (err) {
+        console.error('Network or server error submitting contact form:', err);
+        formStatus.className = 'form-status form-status--error';
+        formStatus.innerHTML = 'Network error: could not connect to the server. If this is a local preview, make sure your serverless backend is running, or reach me directly at <a href="mailto:atharvhadpe18@gmail.com" style="color: var(--accent); text-decoration: underline;">atharvhadpe18@gmail.com</a>.';
+        formStatus.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = originalBtnText;
+        submitBtn.removeAttribute('aria-busy');
+      }
     });
 
     // Realtime error clearing on input
